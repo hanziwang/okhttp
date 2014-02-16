@@ -126,7 +126,7 @@ final class HpackDraft05 {
     Reader(boolean client, int maxHeaderTableByteCount, Source source) {
       this.huffmanCodec = client ? Huffman.Codec.RESPONSE : Huffman.Codec.REQUEST;
       this.maxHeaderTableByteCount = maxHeaderTableByteCount;
-      this.source = new BufferedSource(source, new OkBuffer());
+      this.source = new BufferedSource(source);
     }
 
     int maxHeaderTableByteCount() {

@@ -131,12 +131,4 @@ public final class OkHeaders {
     }
     return sb.toString();
   }
-
-  /** Reads headers or trailers into {@code builder}. */
-  public static void readHeaders(Headers.Builder builder, InputStream in) throws IOException {
-    // parse the result headers until the first blank line
-    for (String line; (line = Util.readAsciiLine(in)).length() != 0; ) {
-      builder.addLine(line);
-    }
-  }
 }
